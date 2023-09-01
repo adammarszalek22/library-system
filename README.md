@@ -6,4 +6,4 @@ pip install -r requirements.txt
 
 python main.py
 
-# Make sure you don't delete the databases in dbs folder as it may result in errors
+# Make sure you don't delete the databases as it will result in errors
