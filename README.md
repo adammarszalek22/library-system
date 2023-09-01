@@ -1,8 +1,8 @@
-# In order to use this programme create a virtual environment and run the following command:
+# In order to use this program create a virtual environment and run the following command:
 
 pip install -r requirements.txt
 
-# Then run the program by:
+# Then run the program with:
 
 python main.py
 
