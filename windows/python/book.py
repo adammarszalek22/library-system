@@ -61,6 +61,7 @@ class Book(Screen):
                 buttons = [button]
             )
             button.bind(on_press=self.pop_up.dismiss)
+        self.pop_up.text = f"You have successfully checked out this book! The return date is {self.return_date[0:16]}"
         self.pop_up.open()
     
     def clear_books(self):
