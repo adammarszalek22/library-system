@@ -38,7 +38,7 @@ def on_start_up():
     res = [[*book] for book in all_books]
     for book in res:
         if book[3] == "True" and has_passed(book[4]):
-            cur.execute("UPDATE books SET borrower = ?, return_date = ?, on_loan = ? WHERE id = ?" ('', '', 'False', book[0]))
+            cur.execute("UPDATE books SET borrower = ?, return_date = ?, on_loan = ? WHERE id = ?", ('', '', 'False', book[0]))
     con.commit()
     con.close()
 
