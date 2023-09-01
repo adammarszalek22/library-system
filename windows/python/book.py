@@ -10,7 +10,7 @@ class Book(Screen):
     pop_up = None
 
     def show_book(self, book_data):
-
+        # book_data is in format [id, title, desc, on_loan, return_date, borrower]
         self.book_id = book_data[0]
 
         self.ids.img.clear_widgets()
@@ -34,7 +34,7 @@ class Book(Screen):
             self.ids.return_date.text = book_data[4][0:16]
             self.ids.button.disabled = True
 
-        im = Image(source=f"images/img{book_data[0] + 1}.jpg")
+        im = Image(source=f"images/img{book_data[0]}.jpg")
         self.ids.img.add_widget(im)
 
     def borrow_book(self):

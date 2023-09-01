@@ -14,9 +14,11 @@
                 hint_text: 'Search for a book here (leave empty to see all books)'
                 helper_text_mode: "on_error"
                 halign: 'left'
+
                 size_hint_x: None
                 width: root.width * 0.7
                 pos_hint: {"center_x": 0.5, "top": 0.70}
+
                 on_text_validate:
                     root.display_books(self, 'all')
             
@@ -30,6 +32,7 @@
             MDGridLayout:
                 cols: 4
                 spacing: 10
+                
                 size_hint_x: 0.7
                 pos_hint: {"center_x": 0.5}
 

@@ -29,14 +29,14 @@ def login_user(email, password):
     con.commit()
     con.close()
     if not pbkdf2_sha256.verify(password, user[3]):
-        return False
+        return False # wrong password
     return True
 
-def print_all():
-    con = sqlite3.connect("users.db")
-    cur = con.cursor()
-    user = cur.execute("SELECT * FROM users").fetchall()
-    con.commit()
-    con.close()
-    for i in user:
-        print(i)
+# def print_all():
+#     con = sqlite3.connect("users.db")
+#     cur = con.cursor()
+#     user = cur.execute("SELECT * FROM users").fetchall()
+#     con.commit()
+#     con.close()
+#     for i in user:
+#         print(i)

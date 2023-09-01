@@ -52,14 +52,6 @@
 
             on_release:
                 root.password(self)
-        
-        MDLabel:
-            id: info
-            font_size: "15sp"
-
-            pos_hint: {"center_x": 0.5, "top": 0.35}
-            size_hint: 0.7, None
-            height: self.texture_size[1]
 
         MDFillRoundFlatButton:
             text: 'Log in'
@@ -74,12 +66,12 @@
             
         MDLabel:
             text: "Or"
-            font_size: "13sp"
-            color: 0.1, 0.1, 0.1, 0.7
+            font_size: "12sp"
+            color: 0.15, 0.15, 0.15, 0.6
             halign: "center"
 
             size_hint_y: None
-            height: self.texture_size[1] * 1.5
+            height: self.texture_size[1]
             pos_hint: {"center_x": 0.5, "top": 0.1}
         
         MDFlatButton:
