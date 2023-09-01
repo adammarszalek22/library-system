@@ -1,0 +1,82 @@
+<MainWindow>
+    name: 'MainWindow'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.2
+
+            MDTextField:
+                id: search_bar
+                icon_left: 'magnify'
+                hint_text: 'Search for a book here (leave empty to see all books)'
+                helper_text_mode: "on_error"
+                halign: 'left'
+                size_hint_x: None
+                width: root.width * 0.7
+                pos_hint: {"center_x": 0.5, "top": 0.70}
+                on_text_validate:
+                    root.display_books(self, 'all')
+            
+            MDGridLayout:
+                cols: 1
+                
+                MDLabel:
+                    halign: 'center'
+                    text: 'Search for...'
+                
+            MDGridLayout:
+                cols: 4
+                spacing: 10
+                size_hint_x: 0.7
+                pos_hint: {"center_x": 0.5}
+
+                MDRaisedButton:
+                    text: ' Available books '
+                    on_release:
+                        root.display_books(search_bar, 'available')
+                    
+                MDRaisedButton:
+                    text: ' Due to be returned today '
+                    on_release:
+                        root.display_books(search_bar, 'today')
+
+                MDRaisedButton:
+                    text: ' Currently on loan '
+                    on_release:
+                        root.display_books(search_bar, 'on_loan')
+
+                MDRaisedButton:
+                    text: ' All '
+                    on_release:
+                        root.display_books(search_bar, 'all')
+        
+        ScrollView:
+            do_scroll_y: True
+            size_hint_y: 0.7
+
+            MDBoxLayout:
+                id: box
+                padding: 30
+                spacing: 2
+                adaptive_height: True
+                orientation: 'vertical'
+        
+        MDGridLayout:
+            cols: 5
+            size_hint_y: 0.1
+
+            MDLabel:
+            MDLabel:
+
+            MDRaisedButton:
+                text: 'Log out'
+                on_release:
+                    root.manager.current = 'Login'
+            
+            MDLabel:
+            MDLabel:
+
+

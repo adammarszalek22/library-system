@@ -1,0 +1,104 @@
+<Book>
+    name: 'Book'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDGridLayout:
+            cols: 2
+            size_hint_y: None
+            height: root.height * 0.1
+
+            MDLabel:
+                text: 'Title'
+            
+            MDLabel:
+                id: title
+            
+        MDGridLayout:
+            cols: 2
+            size_hint_y: None
+            height: root.height * 0.2
+
+            MDLabel:
+                text: 'Description'
+                #adaptive_height: True
+
+            ScrollView:
+                do_scroll_y: True
+                bar_width: 10
+
+                MDGridLayout:
+                    cols: 1
+                    adaptive_height: True
+
+                    MDLabel:
+                        id: desc
+                        adaptive_height: True
+        
+        MDGridLayout:
+            cols: 2
+            height: root.height * 0.4
+
+            MDLabel:
+                text: 'Image'
+            
+            MDBoxLayout:
+                id: img
+                orientation: 'vertical'
+        
+        MDGridLayout:
+            cols: 4
+            adaptive_height: True
+
+            MDLabel:
+                text: 'Is available:'
+            
+            MDLabel:
+                id: is_available
+            
+            MDLabel:
+                id: date
+                text: ''
+            
+            MDLabel:
+                id: return_date
+                text: ''
+            
+            MDLabel:
+                id: loaned_by
+                text: 'Currently loaned by:'
+            
+            MDLabel:
+                id: name
+                text: 'Not on loan'
+        
+        MDGridLayout:
+            cols: 6
+            spacing: 4
+            height: root.height * 0.1
+
+            MDLabel:
+            MDLabel:
+
+            MDRaisedButton:
+                text: 'Back'
+                pos_hint: {"center_x": 0.5}
+                on_release: 
+                    root.manager.current = 'MainWindow'
+            
+            MDRaisedButton:
+                id: button
+                text: 'Borrow book'
+                pos_hint: {"center_x": 0.5}
+                on_release: 
+                    root.borrow_book()
+                    root.clear_books()
+                    root.manager.current = 'MainWindow'
+            
+            MDLabel:
+            MDLabel:
+        
+        MDGridLayout:
+            cols: 2
+            

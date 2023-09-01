@@ -1,0 +1,5 @@
+requests
+pillow
+passlib
+kivy
+kivymd
