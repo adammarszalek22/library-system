@@ -32,6 +32,8 @@ def is_same_date(date1, date2):
     return str(date1)[0:10] == str(date2)[0:10]
 
 def on_start_up():
+    # This will update all books to make sure they
+    # show as 'available' after the return date has passed
     con = sqlite3.connect("books.db")
     cur = con.cursor()
     all_books = cur.execute("SELECT * FROM books")
